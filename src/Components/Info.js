@@ -21,7 +21,7 @@ const Info = ({ values }) => {
         </p>
         <div className={styles.buttonDiv}>
           <button onClick={continueHandler}>
-            <span>Continue</span>
+            <span>Start the trial test</span>
           </button>
         </div>
       </div>
