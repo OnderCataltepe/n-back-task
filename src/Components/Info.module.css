@@ -1,0 +1,62 @@
+.infoDiv {
+  display: flex;
+  flex-direction: column;
+}
+
+.infoDiv p {
+  color: white;
+  font-size: 2.5rem;
+  text-align: left;
+  text-indent: 5rem;
+  letter-spacing: 0.1rem;
+  line-height: 3rem;
+}
+.buttonDiv {
+  align-self: flex-end;
+  margin-top: 4rem;
+}
+.buttonDiv button {
+  border-radius: 1rem;
+  background-color: #ffffff;
+  border: none;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  width: 15rem;
+  transition: all 0.5s;
+  cursor: pointer;
+  box-shadow: 0 0rem 0.5rem 0rem rgba(109, 108, 108, 0.7);
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttonDiv button {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttonDiv button:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0.25rem;
+  right: 0rem;
+  transition: 0.5s;
+}
+
+.buttonDiv button:hover {
+  padding-right: 2rem;
+  padding-left: 0.5rem;
+  color: #008000;
+}
+
+.buttonDiv button:hover:after {
+  color: #008000;
+  opacity: 1;
+  right: 1rem;
+}

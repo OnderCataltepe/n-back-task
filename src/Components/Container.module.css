@@ -1,0 +1,42 @@
+.container{
+    margin:3rem auto;
+    position: relative;
+	z-index: 0;
+	width: 80rem;
+	height: 50rem;
+	border-radius: 1rem;
+	overflow: hidden;
+	padding: 4rem;
+}
+@keyframes rotate {
+	100% {
+		transform: rotate(1turn);
+	}
+}
+.container::before{
+        content: '';
+		position: absolute;
+		z-index: -2;
+		left: -50%;
+		top: -50%;
+		width: 200%;
+		height: 200%;
+		background-color: #399953;
+		background-repeat: no-repeat;
+		background-size: 50% 50%, 50% 50%;
+		background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+		background-image: linear-gradient(#00ff44, #00ff44), linear-gradient(#000000, #000000), linear-gradient(#ff1100, #ff1100), linear-gradient(#000000, #000000);
+		animation: rotate 12s linear infinite;
+}
+
+.container::after{
+        content: '';
+		position: absolute;
+		z-index: -1;
+		left: 0.6rem;
+		top: 0.6rem;
+		width: calc(100% - 12px);
+		height: calc(100% - 12px);
+		background: black;
+		border-radius: 0.5rem;
+}
