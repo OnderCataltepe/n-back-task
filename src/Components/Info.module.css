@@ -11,17 +11,20 @@
   letter-spacing: 0.1rem;
   line-height: 3rem;
 }
+
 .buttonDiv {
   align-self: flex-end;
   margin-top: 4rem;
   display: flex;
   align-items: center;
 }
+
 .buttonDiv p {
   color: white;
   font-size: 2.5rem;
   margin-left: 1rem;
 }
+
 .buttonDiv button {
   border-radius: 1rem;
   background-color: #ffffff;

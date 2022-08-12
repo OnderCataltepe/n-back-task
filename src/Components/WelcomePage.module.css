@@ -12,21 +12,3 @@ h1 {
 .welcomeDiv div {
   margin-top: 8rem;
 }
-
-.welcomeDiv div button {
-  padding: 0.8rem 5rem;
-  font-size: 3rem;
-  font-weight: bold;
-  letter-spacing: 0.1rem;
-  cursor: pointer;
-  background-color: green;
-  color: white;
-  border-radius: 2rem;
-  box-shadow: 0 0rem 0.5rem 0rem rgba(104, 103, 103, 0.7);
-  opacity: 0.8;
-}
-
-.welcomeDiv div button:hover {
-  opacity: 1;
-  box-shadow: 0 0rem 0.5rem 0rem rgba(201, 198, 198, 0.7);
-}

@@ -3,31 +3,103 @@ import { useReducer } from 'react';
 import Container from './Components/Container';
 import Info from './Components/Info';
 import WelcomePage from './Components/WelcomePage';
+import Test from './Components/Test';
+import Confirm from './Components/Confirm';
+import Results from './Results';
+
+const exampleSet = ['A', 'C', 'D', 'A', 'D', 'G', 'E', 'G', 'F', 'H'];
+const realSet = [
+  'K',
+  'J',
+  'A',
+  'J',
+  'A',
+  'L',
+  'D',
+  'L',
+  'B',
+  'L',
+  'F',
+  'M',
+  'F',
+  'A',
+  'N',
+  'A',
+  'D',
+  'N',
+  'D',
+  'G'
+];
 
 const initialState = {
   container: true,
   welcome: true,
   info: false,
-  trial: false
+  trial: false,
+  ready: false,
+  real: false,
+  result: false
 };
 
 const reducer = (state, action) => {
   switch (action.type) {
     case 'start':
-      return { container: true, welcome: false, info: true, trial: false };
+      return { ...state, welcome: false, info: true };
     case 'continue':
-      return { container: false, welcome: false, info: false, trial: false };
+      return { ...state, container: false, info: false, trial: true };
+    case 'ready':
+      return { ...state, container: true, trial: false, ready: true };
+    case 'real':
+      return { ...state, container: false, ready: false, real: true };
+    case 'result':
+      return { ...state, container: true, real: false, result: true };
+    case 'reset':
+      return initialState;
+  }
+};
+
+const resultState = {
+  correctNumber: 0,
+  wrongNumber: 0,
+  totalNumber: 7,
+  correctTimes: [],
+  wrongTimes: []
+};
+const resultReducer = (state, action) => {
+  switch (action.type) {
+    case 'correct':
+      return {
+        ...state,
+        correctNumber: state.correctNumber + 1,
+        correctTimes: [...state.correctTimes, action.value]
+      };
+    case 'wrong':
+      return {
+        ...state,
+        wrongNumber: state.wrongNumber + 1,
+        wrongTimes: [...state.wrongTimes, action.value]
+      };
+    case 'reset':
+      return resultState;
   }
 };
 function App() {
   const [pageState, dispatch] = useReducer(reducer, initialState);
-  const values = { pageState, dispatch };
+  const [results, resultDispatch] = useReducer(resultReducer, resultState);
+  const pageValues = { pageState, dispatch };
+  const resultValues = { results, resultDispatch };
   return (
     <div className="App">
-      <Container>
-        <WelcomePage values={values} />
-        <Info values={values} />
+      <Container pageState={pageState}>
+        <WelcomePage pageValues={pageValues} />
+        <Info pageValues={pageValues} />
+        <Confirm pageValues={pageValues} />
+        {pageState.result && <Results resultValues={resultValues} pageValues={pageValues} />}
       </Container>
+      {pageState.trial && (
+        <Test pageValues={pageValues} set={exampleSet} resultValues={resultValues} />
+      )}
+      {pageState.real && <Test resultValues={resultValues} pageValues={pageValues} set={realSet} />}
     </div>
   );
 }

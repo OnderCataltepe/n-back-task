@@ -1,20 +1,14 @@
-import { useEffect } from 'react';
 import styles from './WelcomePage.module.css';
-const WelcomePage = ({ values }) => {
-  const { pageState, dispatch } = values;
+import Button1 from './Button1';
+const WelcomePage = ({ pageValues }) => {
+  const { pageState, dispatch } = pageValues;
 
-  useEffect(() => {
-    console.log(pageState.welcome);
-  }, []);
-  const startHandler = () => {
-    dispatch({ type: 'start' });
-  };
   return (
     pageState.welcome && (
       <div className={styles.welcomeDiv}>
         <h1>2-BACK TASK</h1>
         <div>
-          <button onClick={startHandler}>Start</button>
+          <Button1 onClick={() => dispatch({ type: 'start' })} value="Start" />
         </div>
       </div>
     )

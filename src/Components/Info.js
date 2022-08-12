@@ -1,9 +1,7 @@
 import styles from './Info.module.css';
-const Info = ({ values }) => {
-  const { pageState, dispatch } = values;
-  const continueHandler = () => {
-    dispatch({ type: 'continue' });
-  };
+const Info = ({ pageValues }) => {
+  const { pageState, dispatch } = pageValues;
+
   return (
     pageState.info && (
       <div className={styles.infoDiv}>
@@ -20,7 +18,7 @@ const Info = ({ values }) => {
           normal test period. After the trial test, you can move on to the real test.
         </p>
         <div className={styles.buttonDiv}>
-          <button onClick={continueHandler}>
+          <button onClick={() => dispatch({ type: 'continue' })}>
             <span>Start the trial test</span>
           </button>
         </div>

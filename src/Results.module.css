@@ -1,0 +1,47 @@
+.resultDiv h3 {
+  font-size: 4rem;
+  color: white;
+  letter-spacing: 0.1rem;
+  font-weight: 200;
+  margin-bottom: 2rem;
+}
+
+.resultDiv table {
+  color: rgb(255, 255, 255);
+  border-collapse: collapse;
+  border: 0.1rem solid white;
+  font-size: 1.6rem;
+  letter-spacing: 0.1rem;
+}
+
+.resultDiv table th,
+td {
+  padding: 0.5rem;
+  border: 0.1rem solid white;
+}
+.resultDiv .greenn {
+  background-color: green;
+}
+
+.redd {
+  background-color: red;
+}
+
+.greyy {
+  background-color: grey;
+}
+
+.returnButton {
+  margin-top: 3rem;
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+  font-family: bold;
+  background-color: black;
+  color: white;
+  border-bottom: 0.2rem solid white;
+  cursor: pointer;
+}
+.returnButton:hover {
+  color: green;
+  border-bottom: 0.2rem solid green;
+}
