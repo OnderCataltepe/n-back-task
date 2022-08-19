@@ -4,7 +4,7 @@ Built with React.js. [Click to run](https://twoback-cataltepe.surge.sh/)
 
 ## Description
 
-This project was demo version.
+The N-back task is a standard "working memory" paradigm in cognitive neuroscience. Participants are presented with a sequence of visual stimuli. The task is to decide whether each stimulus matches the stimulus n trials before. This version is the visual 2-back task.
 
 ## Instructions
 
@@ -24,6 +24,8 @@ This project was demo version.
 - The result includes reaction times, the number of correct matches, the number of wrong matches and the missing letters.
 
 ## Scripts
+
+### `npm install`
 
 ### `npm start`
 
