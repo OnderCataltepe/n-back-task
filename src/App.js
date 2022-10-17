@@ -1,13 +1,13 @@
 import './App.css';
 import { useReducer } from 'react';
-import Container from './Components/Container';
-import Info from './Components/Info';
-import WelcomePage from './Components/WelcomePage';
-import Test from './Components/Test';
-import Confirm from './Components/Confirm';
-import Results from './Results';
+import Container from './Components/Container/Container';
+import Info from './Components/Info/Info';
+import WelcomePage from './Components/WelcomePage/WelcomePage';
+import Trial from './Components/Trial/Trial';
+import Confirm from './Components/Confirm/Confirm';
+import Results from './Components/Result/Results';
 
-const exampleSet = ['A', 'C', 'D', 'A', 'D', 'G', 'E', 'G', 'F', 'H'];
+const exampleSet = ['A', 'C', 'A', 'A', 'D', 'G', 'E', 'G', 'F', 'H'];
 const realSet = [
   'K',
   'J',
@@ -97,9 +97,11 @@ function App() {
         {pageState.result && <Results resultValues={resultValues} pageValues={pageValues} />}
       </Container>
       {pageState.trial && (
-        <Test pageValues={pageValues} set={exampleSet} resultValues={resultValues} />
+        <Trial pageValues={pageValues} set={exampleSet} resultValues={resultValues} />
       )}
-      {pageState.real && <Test resultValues={resultValues} pageValues={pageValues} set={realSet} />}
+      {pageState.real && (
+        <Trial resultValues={resultValues} pageValues={pageValues} set={realSet} />
+      )}
     </div>
   );
 }

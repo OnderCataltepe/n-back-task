@@ -45,3 +45,11 @@ td {
   color: green;
   border-bottom: 0.2rem solid green;
 }
+
+@media screen and (max-width: 900px) {
+  .resultDiv table {
+    
+    font-size: 1.4rem;
+    
+  }
+ }

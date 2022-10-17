@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
-import styles from './Test.module.css';
+import styles from './Trial.module.css';
 
-const Test = ({ set, pageValues, resultValues }) => {
+const Trial = ({ set, pageValues, resultValues }) => {
   const { pageState, dispatch } = pageValues;
   const { resultDispatch } = resultValues;
   const letterSet = set;
@@ -68,10 +68,15 @@ const Test = ({ set, pageValues, resultValues }) => {
     }
   };
   return (
-    <div className={`${styles.trialContainer} ${styles[borderColor]}`} onClick={clickHandler}>
-      <p className={!invisible ? styles.invisible : null}>{value}</p>
+    <div
+      data-testid="custom-element"
+      className={`${styles.trialContainer} ${styles[borderColor]}`}
+      onClick={clickHandler}>
+      <p data-testid="custom-paragraph" className={!invisible ? styles.invisible : null}>
+        {value}
+      </p>
     </div>
   );
 };
 
-export default Test;
+export default Trial;

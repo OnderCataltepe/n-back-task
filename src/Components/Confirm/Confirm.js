@@ -1,5 +1,5 @@
 import styles from './Confirm.module.css';
-import Button1 from './Button1';
+import Button1 from '../Button/Button1';
 const Confirm = ({ pageValues }) => {
   const { pageState, dispatch } = pageValues;
 

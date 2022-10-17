@@ -1,5 +1,5 @@
 import styles from './WelcomePage.module.css';
-import Button1 from './Button1';
+import Button1 from '../Button/Button1';
 const WelcomePage = ({ pageValues }) => {
   const { pageState, dispatch } = pageValues;
 

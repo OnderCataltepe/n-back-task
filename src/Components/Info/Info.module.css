@@ -65,3 +65,12 @@
   opacity: 1;
   right: 1rem;
 }
+
+@media screen and (max-width: 900px) {
+ .infoDiv > p {
+  font-size: 1.4rem;
+ }
+  .buttonDiv button span{
+    font-size: 2rem;
+  }
+}

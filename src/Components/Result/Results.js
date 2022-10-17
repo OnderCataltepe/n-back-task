@@ -1,5 +1,5 @@
 import styles from './Results.module.css';
-import Button1 from './Components/Button1';
+import Button1 from '../Button/Button1';
 import { useState } from 'react';
 const Results = ({ resultValues, pageValues }) => {
   const { results, resultDispatch } = resultValues;

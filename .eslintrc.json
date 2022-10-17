@@ -1,9 +1,18 @@
 {
   "env": {
     "browser": true,
-    "es2021": true
+    "es2021": true,
+    "node": true,
+    "jest": true
   },
-  "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:prettier/recommended"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended",
+    "plugin:jest-dom/recommended",
+    "plugin:testing-library/dom",
+    "plugin:testing-library/react"
+  ],
 
   "parserOptions": {
     "ecmaFeatures": {
@@ -13,11 +22,13 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react", "prettier"],
+  "plugins": ["react", "prettier", "testing-library", "jest-dom"],
   "rules": {
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",
-    "prettier/prettier": "error"
+    "no-unused-vars": "off",
+    "unicorn/number-literal-case": "off",
+    "testing-library/no-render-in-setup": ["error", {"allowTestingFrameworkSetupHook": "beforeEach"}]
   },
   "settings": {
     "react": {
