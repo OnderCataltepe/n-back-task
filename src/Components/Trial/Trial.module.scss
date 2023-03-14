@@ -1,11 +1,16 @@
 .trialContainer {
-  width: 50%;
+  width: 70%;
   height: 70%;
   margin: 5rem auto;
   display: flex;
   align-items: center;
   justify-content: center;
-
+  > p {
+    color: white;
+    font-size: 14rem;
+    font-family: 'Times New Roman', Times, serif;
+    cursor: default;
+  }
 }
 
 .grey {
@@ -20,13 +25,11 @@
   border: 4rem solid green;
 }
 
-.trialContainer p {
-  color: white;
-  font-size: 14rem;
-  font-family: 'Times New Roman', Times, serif;
-  cursor: default;
-}
-
 .invisible {
   visibility: hidden;
+}
+@media screen and (max-width: 900px) {
+  .trialContainer {
+    height: 50%;
+  }
 }

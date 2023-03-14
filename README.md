@@ -14,7 +14,7 @@ The N-back task is a standard "working memory" paradigm in cognitive neuroscienc
 > click it with the mouse. If you answered correctly, the color of the frame around the
 > letter will be green. If you answered incorrectly, it will be red."_**
 
-## Features
+## Information
 
 - Trial test includes 10 letters.
 - Real test includes 20 letters.

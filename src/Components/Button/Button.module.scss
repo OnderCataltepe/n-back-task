@@ -1,0 +1,25 @@
+.btn {
+  padding: 0.8rem 1rem;
+  min-width: 12rem;
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+  color: white;
+  background: rgb(14, 91, 0);
+  background: linear-gradient(0deg, rgba(14, 91, 0, 1) 35%, rgba(40, 193, 4, 1) 100%);
+  border-radius: 2rem;
+  box-shadow: 0 0rem 0.5rem 0rem rgba(104, 103, 103, 0.7);
+  opacity: 0.8;
+  border: none;
+  &:hover {
+    opacity: 1;
+    box-shadow: 0 0rem 0.5rem 0rem rgba(201, 198, 198, 0.7);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .btn {
+    font-size: 2rem;
+  }
+}

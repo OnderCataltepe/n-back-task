@@ -1,17 +1,19 @@
-import styles from './WelcomePage.module.css';
-import Button1 from '../Button/Button1';
-const WelcomePage = ({ pageValues }) => {
-  const { pageState, dispatch } = pageValues;
+import styles from './WelcomePage.module.scss';
+import Button from '../Button/Button';
+import { useContext } from 'react';
+import { AppContext } from '../../Context/AppContext';
+
+const WelcomePage = () => {
+  const { pageValues } = useContext(AppContext);
+  const { dispatch } = pageValues;
 
   return (
-    pageState.welcome && (
-      <div className={styles.welcomeDiv}>
-        <h1>2-BACK TASK</h1>
-        <div>
-          <Button1 onClick={() => dispatch({ type: 'start' })} value="Start" />
-        </div>
+    <div className={styles.welcomeDiv}>
+      <h1>2-BACK TASK</h1>
+      <div>
+        <Button onClick={() => dispatch({ type: 'start' })} text="Start" />
       </div>
-    )
+    </div>
   );
 };
 

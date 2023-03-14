@@ -1,23 +1,18 @@
-import styles from './Confirm.module.css';
-import Button1 from '../Button/Button1';
-const Confirm = ({ pageValues }) => {
-  const { pageState, dispatch } = pageValues;
+import styles from './Confirm.module.scss';
+import Button from '../Button/Button';
+import { useContext } from 'react';
+import { AppContext } from '../../Context/AppContext';
+import { CONFIRM_TXT } from '../../Constants';
 
-  const getRealTest = () => {
-    dispatch({ type: 'real' });
-  };
+const Confirm = () => {
+  const { pageValues } = useContext(AppContext);
+  const { dispatch } = pageValues;
 
-  if (!pageState.ready) {
-    return null;
-  }
   return (
     <div className={styles.container}>
-      <p>
-        You have finished the trial test. The real test includes 20 letters. Click the button when
-        you are ready.
-      </p>
+      <p>{CONFIRM_TXT}</p>
 
-      <Button1 onClick={getRealTest} value="Start the Real Test" />
+      <Button onClick={() => dispatch({ type: 'real' })} text="Start the Real Test" />
     </div>
   );
 };

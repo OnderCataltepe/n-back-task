@@ -1,0 +1,19 @@
+.welcomeDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  > h1 {
+    color: #ffffff;
+    font-size: 5rem;
+    letter-spacing: 0.4rem;
+    word-spacing: 0.8rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .welcomeDiv {
+    padding: 3rem;
+  }
+}

@@ -1,6 +1,7 @@
-import styles from './Container.module.css';
-const Container = (props) => {
-  return props.pageState.container && <div className={styles.container}>{props.children}</div>;
+import styles from './Container.module.scss';
+
+const Container = ({ children }) => {
+  return <div className={styles.container}>{children}</div>;
 };
 
 export default Container;

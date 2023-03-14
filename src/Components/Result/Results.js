@@ -1,22 +1,26 @@
-import styles from './Results.module.css';
-import Button1 from '../Button/Button1';
+import styles from './Results.module.scss';
+import Button from '../Button/Button';
 import { useState } from 'react';
-const Results = ({ resultValues, pageValues }) => {
+import { useContext } from 'react';
+import { AppContext } from '../../Context/AppContext';
+
+const Results = () => {
+  const { pageValues, resultValues } = useContext(AppContext);
   const { results, resultDispatch } = resultValues;
   const { dispatch } = pageValues;
-
   const [isShow, setIsShow] = useState(false);
 
   const resetHandler = () => {
     dispatch({ type: 'reset' });
     resultDispatch({ type: 'reset' });
   };
+
   const showResultHandler = () => {
     setIsShow(true);
   };
 
   if (!isShow) {
-    return <Button1 onClick={showResultHandler} value="Show The Result" />;
+    return <Button onClick={showResultHandler} text="Show The Result" />;
   }
   return (
     <div className={styles.resultDiv}>
@@ -49,9 +53,8 @@ const Results = ({ resultValues, pageValues }) => {
           </tr>
         </tbody>
       </table>
-      <button className={styles.returnButton} onClick={resetHandler}>
-        &laquo; Return to first page
-      </button>
+
+      <Button onClick={resetHandler} text="Return first page" />
     </div>
   );
 };

@@ -1,7 +1,10 @@
 import { useEffect, useState, useRef } from 'react';
-import styles from './Trial.module.css';
+import styles from './Trial.module.scss';
+import { useContext } from 'react';
+import { AppContext } from '../../Context/AppContext';
 
-const Trial = ({ set, pageValues, resultValues }) => {
+const Trial = ({ set }) => {
+  const { pageValues, resultValues } = useContext(AppContext);
   const { pageState, dispatch } = pageValues;
   const { resultDispatch } = resultValues;
   const letterSet = set;
@@ -11,7 +14,6 @@ const Trial = ({ set, pageValues, resultValues }) => {
   const [borderColor, setBorderColor] = useState('grey');
   const [initialTime, setInıtıalTime] = useState(null);
   const [isClicked, setIsClicked] = useState(false);
-
   const visibleRef = useRef();
   const nextRef = useRef();
 
@@ -27,7 +29,6 @@ const Trial = ({ set, pageValues, resultValues }) => {
   useEffect(() => {
     if (valueIndex !== letterSet.length) {
       resetData();
-
       visibleRef.current = setTimeout(() => {
         setInvisible(false);
       }, 500);
@@ -72,7 +73,7 @@ const Trial = ({ set, pageValues, resultValues }) => {
       data-testid="custom-element"
       className={`${styles.trialContainer} ${styles[borderColor]}`}
       onClick={clickHandler}>
-      <p data-testid="custom-paragraph" className={!invisible ? styles.invisible : null}>
+      <p data-testid="custom-paragraph" className={invisible ? null : styles.invisible}>
         {value}
       </p>
     </div>
