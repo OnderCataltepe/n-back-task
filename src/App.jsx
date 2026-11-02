@@ -1,7 +1,7 @@
 import './App.scss';
 import { useContext } from 'react';
 import { AppContext } from './Context/AppContext';
-import { Container, Info, WelcomePage, Trial, Confirm, Results } from 'Components';
+import { Container, Info, WelcomePage, Trial, Confirm, Results } from './Components';
 import { EXAMPLE_SET, REAL_SET } from './Constants';
 
 function App() {

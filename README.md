@@ -30,3 +30,11 @@ The N-back task is a standard "working memory" paradigm in cognitive neuroscienc
 ### `npm start`
 
 Runs the app in the development mode.
+
+### `npm test`
+
+Runs the tests with Vitest.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.
